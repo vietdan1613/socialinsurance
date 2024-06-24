@@ -1,0 +1,74 @@
+2024-06-23 14:45:25 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Social Insurance wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-23 14:45:25 - Started 6720
+2024-06-23 14:51:52 - Stopping socialinsurance.exe
+2024-06-23 14:51:52 - ProcessKill 6720
+2024-06-23 14:51:52 - Found child process: 12972 Name: conhost.exe
+2024-06-23 14:51:52 - Found child process: 18700 Name: node.exe
+2024-06-23 14:51:52 - Stopping process 12972
+2024-06-23 14:51:52 - Send SIGINT 12972
+2024-06-23 14:51:52 - SIGINT to 12972 failed - Killing as fallback
+2024-06-23 14:51:52 - Stopping process 18700
+2024-06-23 14:51:52 - Send SIGINT 18700
+2024-06-23 14:51:52 - SIGINT to 18700 failed - Killing as fallback
+2024-06-23 14:51:52 - Stopping process 6720
+2024-06-23 14:51:52 - Send SIGINT 6720
+2024-06-23 14:51:52 - SIGINT to 6720 failed - Killing as fallback
+2024-06-23 14:51:52 - Finished socialinsurance.exe
+2024-06-23 14:51:53 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Social Insurance wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-23 14:51:53 - Started 9400
+2024-06-23 14:52:47 - Stopping socialinsurance.exe
+2024-06-23 14:52:47 - ProcessKill 9400
+2024-06-23 14:52:47 - Found child process: 4112 Name: conhost.exe
+2024-06-23 14:52:47 - Found child process: 14256 Name: node.exe
+2024-06-23 14:52:47 - Stopping process 4112
+2024-06-23 14:52:47 - Send SIGINT 4112
+2024-06-23 14:52:47 - SIGINT to 4112 failed - Killing as fallback
+2024-06-23 14:52:47 - Stopping process 14256
+2024-06-23 14:52:47 - Send SIGINT 14256
+2024-06-23 14:52:47 - SIGINT to 14256 failed - Killing as fallback
+2024-06-23 14:52:47 - Stopping process 9400
+2024-06-23 14:52:47 - Send SIGINT 9400
+2024-06-23 14:52:47 - SIGINT to 9400 failed - Killing as fallback
+2024-06-23 14:52:47 - Finished socialinsurance.exe
+2024-06-23 14:52:48 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Social Insurance wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-23 14:52:48 - Started 18056
+2024-06-23 23:26:21 - Stopping socialinsurance.exe
+2024-06-23 23:26:21 - ProcessKill 18056
+2024-06-23 23:26:21 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2024-06-23 23:26:45 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Social Insurance wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-23 23:26:45 - Started 8100
+2024-06-24 06:53:17 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Social Insurance wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-24 06:53:17 - Started 8024
+2024-06-24 07:26:16 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Social Insurance wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-24 07:26:16 - Started 10292
+2024-06-24 07:38:05 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Social Insurance wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-24 07:38:05 - Started 11824
+2024-06-24 07:38:28 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Social Insurance wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-24 07:38:28 - Started 3904
+2024-06-24 07:39:21 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Social Insurance wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-24 07:39:21 - Started 17848
+2024-06-24 07:39:32 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Social Insurance wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-24 07:39:32 - Started 16448
+2024-06-24 07:40:25 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Social Insurance wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-24 07:40:25 - Started 7432
+2024-06-24 07:40:36 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Social Insurance wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-24 07:40:36 - Started 17476
+2024-06-24 07:41:29 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Social Insurance wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-24 07:41:29 - Started 17932
+2024-06-24 07:41:40 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Social Insurance wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-24 07:41:40 - Started 13056
+2024-06-24 07:42:33 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Social Insurance wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-24 07:42:33 - Started 5824
+2024-06-24 07:42:44 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Social Insurance wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-24 07:42:44 - Started 1972

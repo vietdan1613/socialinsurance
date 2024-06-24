@@ -3,10 +3,10 @@ const sql = require('mssql');
 
 // Configuration object for your SQL Server connection
 const config = {
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  server: process.env.DB_SERVER,
-  database: process.env.DB_DATABASE,
+  user: 'sa',
+  password: 'Password.1',
+  server: 'KHANGNGUYEN\\SQLEXPRESS',
+  database: 'QMS',
   options: {
     encrypt: true, // Use encryption (required for Azure)
     trustServerCertificate: true, // Change to true for local dev/test
@@ -17,6 +17,7 @@ const config = {
 async function executeQuery(query) {
   let pool;
   try {
+    console.log(config)
     pool = await sql.connect(config);
     console.log('Connected to SQL Server');
     let result = await pool.request().query(query);

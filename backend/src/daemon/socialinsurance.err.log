@@ -1,0 +1,1005 @@
+SQL error TypeError: The "config.server" property is required and must be of type string.
+    at new Connection (D:\Project\socialinsurance\backend\node_modules\tedious\lib\connection.js:275:13)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:78:19
+    at new Promise (<anonymous>)
+    at ConnectionPool._poolCreate (D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:67:12)
+    at ConnectionPool._connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:446:10)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:418:19
+    at new Promise (<anonymous>)
+    at ConnectionPool.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:417:12)
+    at Object.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\global-connection.js:59:27)
+    at executeQuery (D:\Project\socialinsurance\backend\src\services\db.js:20:22)
+SQL error TypeError: The "config.server" property is required and must be of type string.
+    at new Connection (D:\Project\socialinsurance\backend\node_modules\tedious\lib\connection.js:275:13)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:78:19
+    at new Promise (<anonymous>)
+    at ConnectionPool._poolCreate (D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:67:12)
+    at ConnectionPool._connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:446:10)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:418:19
+    at new Promise (<anonymous>)
+    at ConnectionPool.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:417:12)
+    at Object.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\global-connection.js:59:27)
+    at executeQuery (D:\Project\socialinsurance\backend\src\services\db.js:20:22)
+SQL error TypeError: The "config.server" property is required and must be of type string.
+    at new Connection (D:\Project\socialinsurance\backend\node_modules\tedious\lib\connection.js:275:13)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:78:19
+    at new Promise (<anonymous>)
+    at ConnectionPool._poolCreate (D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:67:12)
+    at ConnectionPool._connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:446:10)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:418:19
+    at new Promise (<anonymous>)
+    at ConnectionPool.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:417:12)
+    at Object.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\global-connection.js:59:27)
+    at executeQuery (D:\Project\socialinsurance\backend\src\services\db.js:20:22)
+SQL error TypeError: The "config.server" property is required and must be of type string.
+    at new Connection (D:\Project\socialinsurance\backend\node_modules\tedious\lib\connection.js:275:13)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:78:19
+    at new Promise (<anonymous>)
+    at ConnectionPool._poolCreate (D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:67:12)
+    at ConnectionPool._connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:446:10)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:418:19
+    at new Promise (<anonymous>)
+    at ConnectionPool.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:417:12)
+    at Object.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\global-connection.js:59:27)
+    at executeQuery (D:\Project\socialinsurance\backend\src\services\db.js:20:22)
+SQL error TypeError: The "config.server" property is required and must be of type string.
+    at new Connection (D:\Project\socialinsurance\backend\node_modules\tedious\lib\connection.js:275:13)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:78:19
+    at new Promise (<anonymous>)
+    at ConnectionPool._poolCreate (D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:67:12)
+    at ConnectionPool._connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:446:10)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:418:19
+    at new Promise (<anonymous>)
+    at ConnectionPool.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:417:12)
+    at Object.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\global-connection.js:59:27)
+    at executeQuery (D:\Project\socialinsurance\backend\src\services\db.js:20:22)
+SQL error TypeError: The "config.server" property is required and must be of type string.
+    at new Connection (D:\Project\socialinsurance\backend\node_modules\tedious\lib\connection.js:275:13)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:78:19
+    at new Promise (<anonymous>)
+    at ConnectionPool._poolCreate (D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:67:12)
+    at ConnectionPool._connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:446:10)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:418:19
+    at new Promise (<anonymous>)
+    at ConnectionPool.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:417:12)
+    at Object.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\global-connection.js:59:27)
+    at executeQuery (D:\Project\socialinsurance\backend\src\services\db.js:20:22)
+SQL error TypeError: The "config.server" property is required and must be of type string.
+    at new Connection (D:\Project\socialinsurance\backend\node_modules\tedious\lib\connection.js:275:13)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:78:19
+    at new Promise (<anonymous>)
+    at ConnectionPool._poolCreate (D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:67:12)
+    at ConnectionPool._connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:446:10)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:418:19
+    at new Promise (<anonymous>)
+    at ConnectionPool.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:417:12)
+    at Object.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\global-connection.js:59:27)
+    at executeQuery (D:\Project\socialinsurance\backend\src\services\db.js:20:22)
+SQL error TypeError: The "config.server" property is required and must be of type string.
+    at new Connection (D:\Project\socialinsurance\backend\node_modules\tedious\lib\connection.js:275:13)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:78:19
+    at new Promise (<anonymous>)
+    at ConnectionPool._poolCreate (D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:67:12)
+    at ConnectionPool._connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:446:10)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:418:19
+    at new Promise (<anonymous>)
+    at ConnectionPool.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:417:12)
+    at Object.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\global-connection.js:59:27)
+    at executeQuery (D:\Project\socialinsurance\backend\src\services\db.js:20:22)
+SQL error TypeError: The "config.server" property is required and must be of type string.
+    at new Connection (D:\Project\socialinsurance\backend\node_modules\tedious\lib\connection.js:275:13)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:78:19
+    at new Promise (<anonymous>)
+    at ConnectionPool._poolCreate (D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:67:12)
+    at ConnectionPool._connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:446:10)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:418:19
+    at new Promise (<anonymous>)
+    at ConnectionPool.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:417:12)
+    at Object.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\global-connection.js:59:27)
+    at executeQuery (D:\Project\socialinsurance\backend\src\services\db.js:20:22)
+SQL error TypeError: The "config.server" property is required and must be of type string.
+    at new Connection (D:\Project\socialinsurance\backend\node_modules\tedious\lib\connection.js:275:13)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:78:19
+    at new Promise (<anonymous>)
+    at ConnectionPool._poolCreate (D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:67:12)
+    at ConnectionPool._connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:446:10)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:418:19
+    at new Promise (<anonymous>)
+    at ConnectionPool.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:417:12)
+    at Object.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\global-connection.js:59:27)
+    at executeQuery (D:\Project\socialinsurance\backend\src\services\db.js:20:22)
+SQL error TypeError: The "config.server" property is required and must be of type string.
+    at new Connection (D:\Project\socialinsurance\backend\node_modules\tedious\lib\connection.js:275:13)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:78:19
+    at new Promise (<anonymous>)
+    at ConnectionPool._poolCreate (D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:67:12)
+    at ConnectionPool._connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:446:10)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:418:19
+    at new Promise (<anonymous>)
+    at ConnectionPool.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:417:12)
+    at Object.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\global-connection.js:59:27)
+    at executeQuery (D:\Project\socialinsurance\backend\src\services\db.js:20:22)
+SQL error TypeError: The "config.server" property is required and must be of type string.
+    at new Connection (D:\Project\socialinsurance\backend\node_modules\tedious\lib\connection.js:275:13)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:78:19
+    at new Promise (<anonymous>)
+    at ConnectionPool._poolCreate (D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:67:12)
+    at ConnectionPool._connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:446:10)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:418:19
+    at new Promise (<anonymous>)
+    at ConnectionPool.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:417:12)
+    at Object.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\global-connection.js:59:27)
+    at executeQuery (D:\Project\socialinsurance\backend\src\services\db.js:20:22)
+SQL error TypeError: The "config.server" property is required and must be of type string.
+    at new Connection (D:\Project\socialinsurance\backend\node_modules\tedious\lib\connection.js:275:13)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:78:19
+    at new Promise (<anonymous>)
+    at ConnectionPool._poolCreate (D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:67:12)
+    at ConnectionPool._connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:446:10)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:418:19
+    at new Promise (<anonymous>)
+    at ConnectionPool.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:417:12)
+    at Object.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\global-connection.js:59:27)
+    at executeQuery (D:\Project\socialinsurance\backend\src\services\db.js:20:22)
+SQL error TypeError: The "config.server" property is required and must be of type string.
+    at new Connection (D:\Project\socialinsurance\backend\node_modules\tedious\lib\connection.js:275:13)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:78:19
+    at new Promise (<anonymous>)
+    at ConnectionPool._poolCreate (D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:67:12)
+    at ConnectionPool._connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:446:10)
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:418:19
+    at new Promise (<anonymous>)
+    at ConnectionPool.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\base\connection-pool.js:417:12)
+    at Object.connect (D:\Project\socialinsurance\backend\node_modules\mssql\lib\global-connection.js:59:27)
+    at executeQuery (D:\Project\socialinsurance\backend\src\services\db.js:20:22)
+SQL error ConnectionError: Failed to connect to KHANGNGUYENSQLEXPRESS:1433 - getaddrinfo ENOTFOUND khangnguyensqlexpress
+    at D:\Project\socialinsurance\backend\node_modules\mssql\lib\tedious\connection-pool.js:85:17
+    at Connection.onConnect (D:\Project\socialinsurance\backend\node_modules\tedious\lib\connection.js:838:9)
+    at Object.onceWrapper (node:events:634:26)
+    at Connection.emit (node:events:519:28)
+    at Connection.emit (D:\Project\socialinsurance\backend\node_modules\tedious\lib\connection.js:959:18)
+    at Connection.socketError (D:\Project\socialinsurance\backend\node_modules\tedious\lib\connection.js:1340:12)
+    at D:\Project\socialinsurance\backend\node_modules\tedious\lib\connection.js:1133:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+  code: 'ESOCKET',
+  originalError: ConnectionError: Failed to connect to KHANGNGUYENSQLEXPRESS:1433 - getaddrinfo ENOTFOUND khangnguyensqlexpress
+      at Connection.socketError (D:\Project\socialinsurance\backend\node_modules\tedious\lib\connection.js:1340:28)
+      at D:\Project\socialinsurance\backend\node_modules\tedious\lib\connection.js:1133:14
+      at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+    code: 'ESOCKET'
+  }
+}
+node:events:497
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8081
+    at Server.setupListenHandle [as _listen2] (node:net:1898:16)
+    at listenInCluster (node:net:1946:12)
+    at Server.listen (node:net:2044:7)
+    at Function.listen (D:\Project\socialinsurance\backend\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:4:5)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1925:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8081
+}
+
+Node.js v20.15.0
+node:events:497
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8081
+    at Server.setupListenHandle [as _listen2] (node:net:1898:16)
+    at listenInCluster (node:net:1946:12)
+    at Server.listen (node:net:2044:7)
+    at Function.listen (D:\Project\socialinsurance\backend\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:4:5)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1925:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8081
+}
+
+Node.js v20.15.0
+node:events:497
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8081
+    at Server.setupListenHandle [as _listen2] (node:net:1898:16)
+    at listenInCluster (node:net:1946:12)
+    at Server.listen (node:net:2044:7)
+    at Function.listen (D:\Project\socialinsurance\backend\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:4:5)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1925:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8081
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\key.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:11)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\key.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\key.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:11)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\key.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\key.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:11)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\key.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'D:\Project\socialinsurance\backend\backend\cert.pem'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at Object.<anonymous> (D:\Project\socialinsurance\backend\src\server.js:7:12)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Project\\socialinsurance\\backend\\backend\\cert.pem'
+}
+
+Node.js v20.15.0

@@ -1,0 +1,96 @@
+2024-06-22 12:46:04 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Hello World wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-22 12:46:04 - Started 14040
+2024-06-22 12:55:14 - Stopping helloworld.exe
+2024-06-22 12:55:14 - ProcessKill 14040
+2024-06-22 12:55:14 - Found child process: 6484 Name: conhost.exe
+2024-06-22 12:55:14 - Found child process: 9480 Name: node.exe
+2024-06-22 12:55:14 - Stopping process 6484
+2024-06-22 12:55:14 - Send SIGINT 6484
+2024-06-22 12:55:14 - SIGINT to 6484 failed - Killing as fallback
+2024-06-22 12:55:14 - Stopping process 9480
+2024-06-22 12:55:14 - Send SIGINT 9480
+2024-06-22 12:55:14 - SIGINT to 9480 failed - Killing as fallback
+2024-06-22 12:55:14 - Stopping process 14040
+2024-06-22 12:55:14 - Send SIGINT 14040
+2024-06-22 12:55:14 - SIGINT to 14040 failed - Killing as fallback
+2024-06-22 12:55:14 - Finished helloworld.exe
+2024-06-22 12:57:43 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Hello World wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-22 12:57:43 - Started 4164
+2024-06-22 13:12:19 - Stopping helloworld.exe
+2024-06-22 13:12:19 - ProcessKill 4164
+2024-06-22 13:12:19 - Found child process: 8572 Name: conhost.exe
+2024-06-22 13:12:19 - Found child process: 8648 Name: node.exe
+2024-06-22 13:12:19 - Stopping process 8572
+2024-06-22 13:12:19 - Send SIGINT 8572
+2024-06-22 13:12:19 - SIGINT to 8572 failed - Killing as fallback
+2024-06-22 13:12:19 - Stopping process 8648
+2024-06-22 13:12:19 - Send SIGINT 8648
+2024-06-22 13:12:19 - SIGINT to 8648 failed - Killing as fallback
+2024-06-22 13:12:19 - Stopping process 4164
+2024-06-22 13:12:19 - Send SIGINT 4164
+2024-06-22 13:12:20 - SIGINT to 4164 failed - Killing as fallback
+2024-06-22 13:12:20 - Finished helloworld.exe
+2024-06-22 13:12:39 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Hello World wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-22 13:12:40 - Started 12712
+2024-06-22 13:13:21 - Stopping helloworld.exe
+2024-06-22 13:13:21 - ProcessKill 12712
+2024-06-22 13:13:21 - Found child process: 12776 Name: conhost.exe
+2024-06-22 13:13:21 - Found child process: 11492 Name: node.exe
+2024-06-22 13:13:21 - Stopping process 12776
+2024-06-22 13:13:21 - Send SIGINT 12776
+2024-06-22 13:13:21 - SIGINT to 12776 failed - Killing as fallback
+2024-06-22 13:13:21 - Stopping process 11492
+2024-06-22 13:13:21 - Send SIGINT 11492
+2024-06-22 13:13:21 - SIGINT to 11492 failed - Killing as fallback
+2024-06-22 13:13:21 - Stopping process 12712
+2024-06-22 13:13:21 - Send SIGINT 12712
+2024-06-22 13:13:21 - SIGINT to 12712 failed - Killing as fallback
+2024-06-22 13:13:21 - Finished helloworld.exe
+2024-06-22 13:13:44 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Hello World wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-22 13:13:44 - Started 9416
+2024-06-22 14:00:47 - Stopping helloworld.exe
+2024-06-22 14:00:47 - ProcessKill 9416
+2024-06-22 14:00:47 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2024-06-22 14:01:16 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Hello World wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-22 14:01:16 - Started 7216
+2024-06-23 13:19:02 - Stopping helloworld.exe
+2024-06-23 13:19:02 - ProcessKill 7216
+2024-06-23 13:19:02 - Found child process: 7228 Name: conhost.exe
+2024-06-23 13:19:02 - Found child process: 7824 Name: node.exe
+2024-06-23 13:19:03 - Stopping process 7228
+2024-06-23 13:19:03 - Send SIGINT 7228
+2024-06-23 13:19:03 - SIGINT to 7228 failed - Killing as fallback
+2024-06-23 13:19:03 - Stopping process 7824
+2024-06-23 13:19:03 - Send SIGINT 7824
+2024-06-23 13:19:03 - SIGINT to 7824 failed - Killing as fallback
+2024-06-23 13:19:03 - Stopping process 7216
+2024-06-23 13:19:03 - Send SIGINT 7216
+2024-06-23 13:19:03 - SIGINT to 7216 failed - Killing as fallback
+2024-06-23 13:19:03 - Finished helloworld.exe
+2024-06-23 23:26:45 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Hello World wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-23 23:26:45 - Started 8092
+2024-06-24 07:28:19 - Stopping helloworld.exe
+2024-06-24 07:28:19 - ProcessKill 8092
+2024-06-24 07:28:19 - Found child process: 8128 Name: conhost.exe
+2024-06-24 07:28:19 - Found child process: 9144 Name: node.exe
+2024-06-24 07:28:19 - Stopping process 8128
+2024-06-24 07:28:19 - Send SIGINT 8128
+2024-06-24 07:28:19 - SIGINT to 8128 failed - Killing as fallback
+2024-06-24 07:28:19 - Stopping process 9144
+2024-06-24 07:28:19 - Send SIGINT 9144
+2024-06-24 07:28:19 - SIGINT to 9144 failed - Killing as fallback
+2024-06-24 07:28:19 - Stopping process 8092
+2024-06-24 07:28:19 - Send SIGINT 8092
+2024-06-24 07:28:19 - SIGINT to 8092 failed - Killing as fallback
+2024-06-24 07:28:19 - Finished helloworld.exe

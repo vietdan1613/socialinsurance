@@ -1,0 +1,6 @@
+2024-06-24 07:41:17 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Social Insurance1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-24 07:41:17 - Started 15612
+2024-06-24 07:41:29 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Social Insurance1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-24 07:41:29 - Started 11964
+2024-06-24 07:41:40 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Social Insurance1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-24 07:41:40 - Started 17388
