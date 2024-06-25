@@ -14,7 +14,12 @@ export default function Home() {
 
   const [inputValue, setInputValue] = useState('');
   const handleInputChange = (event: any) => {
-    setInputValue(event.target.value);
+    const value = event.target.value;
+
+    // Validate if the input is a number (using regex)
+    if (/^\d*$/.test(value)) {
+      setInputValue(value); // Update state if it's a number
+    }
   };
 
   useEffect(() => {
@@ -34,28 +39,78 @@ export default function Home() {
   }, []);
 
   const onClickSearch = (e: any) => {
+    let now = submitTime
+
+    let res = isCurrentTimeInWorkTime()
+    if (!res) {
+      alert("Hệ thống không trong giờ làm việc vui lòng thử lại sau\n- Thời gian làm việc từ thứ 2 - thứ 6.\n(sáng: 7:30-12:00, chiều: 13:00-16:30)")
+      return
+    }
+    if(inputValue == null || inputValue == ''){
+      alert("Vui lòng nhập STT của bạn!")
+      return
+    }
     if (inputValue.startsWith("1")) {
       let num = parseInt(inputValue) - parseInt(submitT)
       if (num >= 0) {
-        let newTime = submitTime + (num * 15 * 60000)
+        let newTime = now + (num * 15 * 60000)
         let value = handleConvert(newTime)
+        if(value == 'error') return;
         let value2 = handleConvertDate(newTime)
         setCurrentHourTime(value)
         setCurrentHourDate(value2)
+      }else{
+        alert("Vui lòng nhập số lớn hơn số Nợp Hồ Sơ")
       }
     }
 
     if (inputValue.startsWith("2")) {
       let num = parseInt(inputValue) - parseInt(returnT)
-      if (num > 0) {
+      if (num >= 0) {
+        let newTime = now + (num * 15 * 60000)
+        let value = handleConvert(newTime)
+        if(value == 'error') return;
+        let value2 = handleConvertDate(newTime)
+        setCurrentHourTime(value)
+        setCurrentHourDate(value2)
+      }else{
+        alert("Vui lòng nhập số lớn hơn số Trả Kết Quả")
       }
     }
   };
 
-  const handleConvert = (intValue: number) => {
+  function isCurrentTimeInWorkTime(): boolean {
+    const now = new Date();
+
+    // Define work start and end times (example: 8:00 AM to 5:00 PM)
+    const startWorkTime = new Date();
+    startWorkTime.setHours(7, 30, 0); // 8:00 AM
+    const endWorkTime = new Date();
+    endWorkTime.setHours(16, 30, 0); // 5:00 PM
+
+    // Check if current time is within work hours
+    return now >= startWorkTime && now <= endWorkTime;
+  }
+
+
+  const handleConvert = (intValue: number):string => {
     var now = new Date(intValue);
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutesStr = String(now.getMinutes()).padStart(2, '0');
+    var hour = now.getHours();
+    var min = now.getMinutes()
+    if(hour > 16 || (hour == 16 && min > 30)){
+      alert("Số bạn nhập quá lớn vui lòng thử lại!")
+      return 'error'
+    }
+    if(hour < 7 || (hour == 7 && min < 30)){
+      alert("Số bạn nhập quá lớn vui lòng thử lại!")
+      return 'error'
+    }
+    const minutesStr = String(min).padStart(2, '0');
+    if (now.getHours() == 12 && min > 0) {
+      hour += 1
+    }
+    const hours = String(hour).padStart(2, '0');
+
     return hours + ":" + minutesStr;
   };
 

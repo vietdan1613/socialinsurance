@@ -36,3 +36,19 @@
 2024-06-24 07:53:48 - Finished socialinsurancem.exe
 2024-06-24 07:53:49 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Social Insurancem wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
 2024-06-24 07:53:49 - Started 4904
+2024-06-24 08:23:06 - Stopping socialinsurancem.exe
+2024-06-24 08:23:06 - ProcessKill 4904
+2024-06-24 08:23:06 - Found child process: 15312 Name: conhost.exe
+2024-06-24 08:23:06 - Found child process: 12772 Name: node.exe
+2024-06-24 08:23:06 - Stopping process 15312
+2024-06-24 08:23:06 - Send SIGINT 15312
+2024-06-24 08:23:06 - SIGINT to 15312 failed - Killing as fallback
+2024-06-24 08:23:06 - Stopping process 12772
+2024-06-24 08:23:06 - Send SIGINT 12772
+2024-06-24 08:23:06 - SIGINT to 12772 failed - Killing as fallback
+2024-06-24 08:23:06 - Stopping process 4904
+2024-06-24 08:23:06 - Send SIGINT 4904
+2024-06-24 08:23:06 - SIGINT to 4904 failed - Killing as fallback
+2024-06-24 08:23:06 - Finished socialinsurancem.exe
+2024-06-24 14:46:22 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\Project\socialinsurance\backend\node_modules\node-windows\lib\wrapper.js --file D:\Project\socialinsurance\backend\src\server.js --scriptoptions= --log "Social Insurancem wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-24 14:46:22 - Started 7924
