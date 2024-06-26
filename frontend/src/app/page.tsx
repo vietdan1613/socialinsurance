@@ -39,21 +39,21 @@ export default function Home() {
   }, []);
 
   const onClickSearch = (e: any) => {
-    let now = submitTime
-
+    // check out of working time
     let res = isCurrentTimeInWorkTime()
     if (!res) {
       alert("Hệ thống không trong giờ làm việc vui lòng thử lại sau\n- Thời gian làm việc từ thứ 2 - thứ 6.\n(sáng: 7:30-12:00, chiều: 13:00-16:30)")
       return
     }
-    if(inputValue == null || inputValue == ''){
-      alert("Vui lòng nhập STT của bạn!")
+
+    // check enter not enter value yet
+    if(inputValue == null || inputValue == '')
       return
-    }
+
     if (inputValue.startsWith("1")) {
       let num = parseInt(inputValue) - parseInt(submitT)
       if (num >= 0) {
-        let newTime = now + (num * 15 * 60000)
+        let newTime = submitTime + (num * 15 * 60000)
         let value = handleConvert(newTime)
         if(value == 'error') return;
         let value2 = handleConvertDate(newTime)
@@ -67,7 +67,7 @@ export default function Home() {
     if (inputValue.startsWith("2")) {
       let num = parseInt(inputValue) - parseInt(returnT)
       if (num >= 0) {
-        let newTime = now + (num * 15 * 60000)
+        let newTime = returnTime + (num * 15 * 60000)
         let value = handleConvert(newTime)
         if(value == 'error') return;
         let value2 = handleConvertDate(newTime)
@@ -95,8 +95,10 @@ export default function Home() {
 
   const handleConvert = (intValue: number):string => {
     var now = new Date(intValue);
-    var hour = now.getHours();
-    var min = now.getMinutes()
+    // Output the date in UTC (optional step)
+
+    var hour = now.getUTCHours();
+    var min = now.getUTCMinutes()
     if(hour > 16 || (hour == 16 && min > 30)){
       alert("Số bạn nhập quá lớn vui lòng thử lại!")
       return 'error'
@@ -106,7 +108,7 @@ export default function Home() {
       return 'error'
     }
     const minutesStr = String(min).padStart(2, '0');
-    if (now.getHours() == 12 && min > 0) {
+    if (now.getUTCHours() == 12 && min > 0) {
       hour += 1
     }
     const hours = String(hour).padStart(2, '0');
@@ -116,9 +118,9 @@ export default function Home() {
 
   const handleConvertDate = (intValue: number) => {
     var now = new Date(intValue);
-    const dayOfWeek = now.getDay() == 0 ? "Chủ Nhật" : "Thứ " + (now.getDay() + 1)
-    const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed, so we add 1
-    const day = String(now.getDate()).padStart(2, '0');
+    const dayOfWeek = now.getUTCDay() == 0 ? "Chủ Nhật" : "Thứ " + (now.getUTCDay() + 1)
+    const month = String(now.getUTCMonth() + 1).padStart(2, '0'); // Months are 0-indexed, so we add 1
+    const day = String(now.getUTCDate()).padStart(2, '0');
     return dayOfWeek + ", " + day + " Tháng " + month;
   };
 

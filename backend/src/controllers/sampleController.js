@@ -2,28 +2,26 @@ const { executeQuery } = require('../services/db');
 
 exports.getSample = async (req, res) => {
     try {
-        const query = 'SELECT MAPHIEU FROM XULYYC';
+        const query = `SELECT MAPHIEU, DATEDIFF(SECOND, '1970-01-01', GGIAODICH) AS UnixTimestamp FROM XULYYC WHERE GGIAODICH IS NOT NULL`;
         const result = await executeQuery(query);
-        const row = result.recordsets[0].map(item => item["MAPHIEU"]);
-        let sub = maxNumberStartingWith(row, '1')
-        let ret = maxNumberStartingWith(row, '2')
-        const now = new Date().getTime();
-        res.json({ submit: sub, submitTime: now, return: ret, returnTime: now });
+        let sub = maxNumberStartingWith(result.recordsets[0], '1')
+        let ret = maxNumberStartingWith(result.recordsets[0], '2')
+        res.json({ submit: sub.MAPHIEU, submitTime: sub.UnixTimestamp  * 1000, return: ret.MAPHIEU, returnTime: ret.UnixTimestamp  * 1000 });
     } catch (err) {
         res.json({ message: `${err}` });
     }
 };
 
-function maxNumberStartingWith(numbers, startChar) {
+function maxNumberStartingWith(result, startChar) {
     // Convert the start character to a string (in case it's not already)
     startChar = String(startChar);
 
     // Filter the list to include only numbers that start with the specified character
-    const filteredNumbers = numbers.filter(num => String(num).startsWith(startChar));
+    const filteredNumbers = result.filter(num => String(num.MAPHIEU).startsWith(startChar));
 
     // Find and return the maximum number from the filtered list
     if (filteredNumbers.length > 0) {
-        return Math.max(...filteredNumbers);
+        return filteredNumbers[filteredNumbers.length - 1];
     } else {
         return null;  // Return null if no numbers start with the specified character
     }
