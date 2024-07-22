@@ -22,38 +22,58 @@ export default function Home() {
     }
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
+  const fetchData = async () => {
       try {
+        debugger
         const data = await getSample();
-        setSubmitT(data.submit);
-        setSubmitTime(data.submitTime);
-        setReturnT(data.return);
-        setReturnTime(data.returnTime);
+        return data
       } catch (error) {
         console.error('Error fetching data', error);
+        return null
       }
-    };
+  };
 
-    fetchData();
+  useEffect(() => {
+    const intervalId = setInterval(async () => {
+      const result = await fetchData();
+      if (result) {
+        setSubmitT(result.submit);
+        setSubmitTime(result.submitTime);
+        setReturnT(result.return);
+        setReturnTime(result.returnTime);
+          onClickSearch();
+      }
+    }, 60000 * 3); // Call the API every 60 seconds
+
+    // Fetch data immediately on component mount
+    fetchData().then(result => {
+      if (result) {
+        setSubmitT(result.submit);
+        setSubmitTime(result.submitTime);
+        setReturnT(result.return);
+        setReturnTime(result.returnTime);
+          onClickSearch();
+      }
+    });
+
+    return () => clearInterval(intervalId);
   }, []);
 
-  const onClickSearch = (e: any) => {
-    // check out of working time
+  const onClickSearch = () => {
+    if(inputValue == null || inputValue == ''){
+      return
+    }
+    let now = submitTime
     let res = isCurrentTimeInWorkTime()
     if (!res) {
       alert("Hệ thống không trong giờ làm việc vui lòng thử lại sau\n- Thời gian làm việc từ thứ 2 - thứ 6.\n(sáng: 7:30-12:00, chiều: 13:00-16:30)")
       return
     }
-
-    // check enter not enter value yet
-    if(inputValue == null || inputValue == '')
-      return
-
+  
     if (inputValue.startsWith("1")) {
       let num = parseInt(inputValue) - parseInt(submitT)
       if (num >= 0) {
-        let newTime = submitTime + (num * 15 * 60000)
+        let newTime = now + (num * 15 * 60000)
         let value = handleConvert(newTime)
         if(value == 'error') return;
         let value2 = handleConvertDate(newTime)
@@ -67,7 +87,7 @@ export default function Home() {
     if (inputValue.startsWith("2")) {
       let num = parseInt(inputValue) - parseInt(returnT)
       if (num >= 0) {
-        let newTime = returnTime + (num * 15 * 60000)
+        let newTime = now + (num * 15 * 60000)
         let value = handleConvert(newTime)
         if(value == 'error') return;
         let value2 = handleConvertDate(newTime)

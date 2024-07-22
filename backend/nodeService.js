@@ -2,9 +2,9 @@ var Service = require('node-windows').Service;
 
 // Create a new service object
 var svc = new Service({
-  name:'Social Insurancem',
+  name:'AAA',
   description: 'The nodejs.org example web server.',
-  script: 'D:\\Project\\socialinsurance\\backend\\src\\server.js',
+  script: 'E:\\backend\\src\\server.js',
   nodeOptions: [
     '--harmony',
     '--max_old_space_size=4096'

@@ -4,8 +4,8 @@ const sql = require('mssql');
 // Configuration object for your SQL Server connection
 const config = {
   user: 'sa',
-  password: 'Password.1',
-  server: 'KHANGNGUYEN\\SQLEXPRESS',
+  password: '12345',
+  server: 'DESKTOP-I0IKPN8\\SQLEXPRESS',
   database: 'QMS',
   options: {
     encrypt: true, // Use encryption (required for Azure)
