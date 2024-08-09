@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React, { useEffect, useState } from 'react';
-import { getSample } from '../services/api';
+import { getSample, register1, register2 } from '../services/api';
 
 export default function Home() {
   const [submitT, setSubmitT] = useState('');
@@ -11,6 +11,9 @@ export default function Home() {
   const [returnTime, setReturnTime] = useState(0);
   const [currentHour, setCurrentHourTime] = useState<string>('');
   const [currentDate, setCurrentHourDate] = useState<string>('');
+  const [num1, setNum1] = useState<string>('');
+  const [num2, setNum2] = useState<string>('');
+  const [visiNum, setVisiNum] = useState<boolean>(false);
 
   const [inputValue, setInputValue] = useState('');
   const handleInputChange = (event: any) => {
@@ -22,18 +25,39 @@ export default function Home() {
     }
   };
 
-  const fetchData = async () => {
-      try {
-        debugger
-        const data = await getSample();
-        return data
-      } catch (error) {
-        console.error('Error fetching data', error);
-        return null
-      }
+  const fetchRegister = async () => {
+    try {
+      const data = await register1();
+      return data
+    } catch (error) {
+      console.error('Error fetching fetchRegister', error);
+      return null
+    }
   };
 
+  const fetchRegister2 = async () => {
+    try {
+      const data = await register2();
+      return data
+    } catch (error) {
+      console.error('Error fetching fetchRegister2', error);
+      return null
+    }
+  };
+
+  const fetchData = async () => {
+    try {
+      const data = await getSample();
+      return data
+    } catch (error) {
+      console.error('Error fetching fetchData', error);
+      return null
+    }
+  };
+
+
   useEffect(() => {
+    updateHS()
     const intervalId = setInterval(async () => {
       const result = await fetchData();
       if (result) {
@@ -41,7 +65,7 @@ export default function Home() {
         setSubmitTime(result.submitTime);
         setReturnT(result.return);
         setReturnTime(result.returnTime);
-          onClickSearch();
+        onClickSearch();
       }
     }, 60000 * 3); // Call the API every 60 seconds
 
@@ -52,15 +76,106 @@ export default function Home() {
         setSubmitTime(result.submitTime);
         setReturnT(result.return);
         setReturnTime(result.returnTime);
-          onClickSearch();
+        onClickSearch();
       }
     });
 
     return () => clearInterval(intervalId);
   }, []);
 
+  const onClickNopHS = () => {
+    let key = getKey(1);
+    const savedName = localStorage.getItem(key);
+    if (savedName) {
+      alert("STT của bạn là: " + savedName);
+    } else {
+      fetchRegister().then(res => {
+        if (res.isSuccess) {
+          alert(res.message)
+          localStorage.setItem(key, res.maphieu);
+          updateHS()
+        } else {
+          alert(res.message)
+        }
+      })
+    }
+  }
+
+  const onClickTraKQ = () => {
+    let key = getKey(2);
+    const savedName = localStorage.getItem(key);
+    if (savedName) {
+      alert("STT của bạn là: " + savedName);
+    } else {
+      fetchRegister2().then(res => {
+        if (res.isSuccess) {
+          alert(res.message)
+          localStorage.setItem(key, res.maphieu);
+          updateHS()
+        } else {
+          alert(res.message)
+        }
+      })
+    }
+  }
+
+  const updateHS = () => {
+    let key1 = getKey(1);
+    let key2 = getKey(2);
+    const savedName1 = localStorage.getItem(key1);
+    const savedName2 = localStorage.getItem(key2);
+    setVisiNum(false)
+    if (savedName1) {
+      setNum1(savedName1)
+      setVisiNum(true)
+    }
+    if (savedName2) {
+      setNum2(savedName2)
+      setVisiNum(true)
+    }
+  }
+
+  const onClickNum1 = () => {
+    setInputValue(num1)
+    search1(num1)
+  }
+  const onClickNum2 = () => {
+    setInputValue(num2)
+    search2(num2)
+  }
+
+  const search1 = (input: string) => {
+    let num = parseInt(input) - parseInt(submitT)
+    if (num >= 0) {
+      let now = submitTime
+      let newTime = now + (num * 15 * 60000)
+      let value = handleConvert(newTime)
+      if (value == 'error') return;
+      let value2 = handleConvertDate(newTime)
+      setCurrentHourTime(value)
+      setCurrentHourDate(value2)
+    } else {
+      alert("Vui lòng nhập số lớn hơn số Nợp Hồ Sơ")
+    }
+  }
+
+  const search2 = (input: string) => {
+    let now = submitTime
+    let num = parseInt(input) - parseInt(returnT)
+    if (num >= 0) {
+      let newTime = now + (num * 15 * 60000)
+      let value = handleConvert(newTime)
+      if (value == 'error') return;
+      let value2 = handleConvertDate(newTime)
+      setCurrentHourTime(value)
+      setCurrentHourDate(value2)
+    } else {
+      alert("Vui lòng nhập số lớn hơn số Trả Kết Quả")
+    }
+  }
+
   const onClickSearch = () => {
-    if(inputValue == null || inputValue == ''){
+    if (inputValue == null || inputValue == '') {
       return
     }
     let now = submitTime
@@ -69,33 +184,35 @@ export default function Home() {
       alert("Hệ thống không trong giờ làm việc vui lòng thử lại sau\n- Thời gian làm việc từ thứ 2 - thứ 6.\n(sáng: 7:30-12:00, chiều: 13:00-16:30)")
       return
     }
-  
+
     if (inputValue.startsWith("1")) {
-      let num = parseInt(inputValue) - parseInt(submitT)
-      if (num >= 0) {
-        let newTime = now + (num * 15 * 60000)
-        let value = handleConvert(newTime)
-        if(value == 'error') return;
-        let value2 = handleConvertDate(newTime)
-        setCurrentHourTime(value)
-        setCurrentHourDate(value2)
-      }else{
-        alert("Vui lòng nhập số lớn hơn số Nợp Hồ Sơ")
-      }
+      // let num = parseInt(inputValue) - parseInt(submitT)
+      // if (num >= 0) {
+      //   let newTime = now + (num * 15 * 60000)
+      //   let value = handleConvert(newTime)
+      //   if (value == 'error') return;
+      //   let value2 = handleConvertDate(newTime)
+      //   setCurrentHourTime(value)
+      //   setCurrentHourDate(value2)
+      // } else {
+      //   alert("Vui lòng nhập số lớn hơn số Nợp Hồ Sơ")
+      // }
+      search1(inputValue)
     }
 
     if (inputValue.startsWith("2")) {
-      let num = parseInt(inputValue) - parseInt(returnT)
-      if (num >= 0) {
-        let newTime = now + (num * 15 * 60000)
-        let value = handleConvert(newTime)
-        if(value == 'error') return;
-        let value2 = handleConvertDate(newTime)
-        setCurrentHourTime(value)
-        setCurrentHourDate(value2)
-      }else{
-        alert("Vui lòng nhập số lớn hơn số Trả Kết Quả")
-      }
+      // let num = parseInt(inputValue) - parseInt(returnT)
+      // if (num >= 0) {
+      //   let newTime = now + (num * 15 * 60000)
+      //   let value = handleConvert(newTime)
+      //   if (value == 'error') return;
+      //   let value2 = handleConvertDate(newTime)
+      //   setCurrentHourTime(value)
+      //   setCurrentHourDate(value2)
+      // } else {
+      //   alert("Vui lòng nhập số lớn hơn số Trả Kết Quả")
+      // }
+      search2(inputValue)
     }
   };
 
@@ -112,18 +229,18 @@ export default function Home() {
     return now >= startWorkTime && now <= endWorkTime;
   }
 
-
-  const handleConvert = (intValue: number):string => {
+  const handleConvert = (intValue: number): string => {
     var now = new Date(intValue);
     // Output the date in UTC (optional step)
 
     var hour = now.getUTCHours();
     var min = now.getUTCMinutes()
-    if(hour > 16 || (hour == 16 && min > 30)){
+    debugger
+    if (hour > 16 || (hour == 16 && min > 30)) {
       alert("Số bạn nhập quá lớn vui lòng thử lại!")
       return 'error'
     }
-    if(hour < 7 || (hour == 7 && min < 30)){
+    if (hour < 7 || (hour == 7 && min < 30)) {
       alert("Số bạn nhập quá lớn vui lòng thử lại!")
       return 'error'
     }
@@ -143,6 +260,15 @@ export default function Home() {
     const day = String(now.getUTCDate()).padStart(2, '0');
     return dayOfWeek + ", " + day + " Tháng " + month;
   };
+
+  const getKey = (mode: number) => {
+    const now = new Date();
+
+    const year = now.getFullYear();       // 4-digit year
+    const month = now.getMonth() + 1;     // Month (0-11, add 1 to get 1-12)
+    const day = now.getDate();            // Day of the month (1-31)
+    return day + "_" + month + "_" + year + "_" + mode
+  }
 
   return (
     <div className="flex min-h-screen flex-col items-center bg-white">
@@ -179,12 +305,14 @@ export default function Home() {
 
           </div>
           <div className="p-6">
-            <input type="text" id="success" className="bg-gray-50 border-b text-green-900 block w-full py-2.5"
+            <input type="text"
+              id="success" className="bg-gray-50 border-b text-green-900 block w-full py-2.5"
               placeholder="Nhập STT của bạn"
               value={inputValue}
               onChange={handleInputChange} />
-            <button type="submit" className="w-full mt-2 text-white bg-sky-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-4 py-3"
+            <button type="submit" className="w-full mt-2 text-white bg-sky-700 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-4 py-3"
               onClick={onClickSearch}>Tra cứu</button>
+
           </div>
           <div className="flex divide-x border-t border-gray-150">
             <div className="m-auto p-6">
@@ -192,6 +320,22 @@ export default function Home() {
               <p className="text-8xl font-bold text-sky-700">{currentHour}</p>
               <p className="text-xs text-gray-400">{currentDate}</p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-white w-full items-center justify-between mt-4 px-4">
+        <div className="mx-auto max-w-md rounded ">
+          <p className="text-gray-500 font-bold">Lấy Số Quầy: </p>
+          <div className="flex">
+            <button type="submit" className="w-full mt-2 mr-1 text-white bg-sky-700 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-4 py-3"
+              onClick={onClickNopHS}>Nợp Hồ Sơ</button>
+            <button type="submit" className="w-full mt-2 ml-1 text-white bg-sky-700 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-4 py-3"
+              onClick={onClickTraKQ}>Trả Kết Quả</button>
+          </div>
+          <div className={visiNum ? "mt-2" : "hidden"}>
+            <button onClick={onClickNum1} className={num1 ? "mt-2 mr-2 text-white bg-sky-700 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-2 py-1" : "hidden"}>{num1}</button>
+            <button onClick={onClickNum2} className={num2 ? "mt-2 text-white bg-sky-700 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-2 py-1" : "hidden"}>{num2}</button>
           </div>
         </div>
       </div>
