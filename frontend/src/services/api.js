@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8081/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8081/api';
 
 export const getSample = async () => {
   try {
@@ -12,9 +12,9 @@ export const getSample = async () => {
   }
 };
 
-export const register1 = async () => {
+export const register1 = async (data) => {
   try {
-    const response = await axios.get(`${API_URL}/register`);
+    const response = await axios.post(`${API_URL}/register`, data);
     return response.data;
   } catch (error) {
     console.error('Error register1', error);

@@ -4,18 +4,26 @@ import Image from "next/image";
 import React, { useEffect, useState } from 'react';
 import { getSample, register1, register2 } from '../services/api';
 
+interface FormState {
+  sttNHS: string;
+  thoiGianNHS: number;
+  sttTKQ: string;
+  thoigianTKQ: number;
+}
+
+
 export default function Home() {
-  const [submitT, setSubmitT] = useState('');
-  const [submitTime, setSubmitTime] = useState(0);
-  const [returnT, setReturnT] = useState('');
-  const [returnTime, setReturnTime] = useState(0);
+  const [duLieuHienTai, setDuLieuHienTai] = useState<FormState>({ sttNHS: '', thoiGianNHS: 0, sttTKQ: '', thoigianTKQ: 0 });
+  const { sttNHS, thoiGianNHS, sttTKQ, thoigianTKQ } = duLieuHienTai;
   const [currentHour, setCurrentHourTime] = useState<string>('');
   const [currentDate, setCurrentHourDate] = useState<string>('');
   const [num1, setNum1] = useState<string>('');
   const [num2, setNum2] = useState<string>('');
   const [visiNum, setVisiNum] = useState<boolean>(false);
-
   const [inputValue, setInputValue] = useState('');
+  const [inputValueCCCD, setInputValueCCCD] = useState('');
+  const key_cccd = "your_cccd"
+
   const handleInputChange = (event: any) => {
     const value = event.target.value;
 
@@ -25,22 +33,20 @@ export default function Home() {
     }
   };
 
-  const fetchRegister = async () => {
-    try {
-      const data = await register1();
-      return data
-    } catch (error) {
-      console.error('Error fetching fetchRegister', error);
-      return null
+  const handleInputChangeCCCD = (event: any) => {
+    const value = event.target.value;
+
+    // Validate if the input is a number (using regex)
+    if (/^\d*$/.test(value)) {
+      setInputValueCCCD(value); // Update state if it's a number
     }
   };
 
-  const fetchRegister2 = async () => {
+  const fetchRegister = async (data: any) => {
     try {
-      const data = await register2();
-      return data
+      return await register1(data)
     } catch (error) {
-      console.error('Error fetching fetchRegister2', error);
+      console.error('Error fetching fetchRegister', error);
       return null
     }
   };
@@ -61,21 +67,14 @@ export default function Home() {
     const intervalId = setInterval(async () => {
       const result = await fetchData();
       if (result) {
-        setSubmitT(result.submit);
-        setSubmitTime(result.submitTime);
-        setReturnT(result.return);
-        setReturnTime(result.returnTime);
+        setDuLieuHienTai(result)
         onClickSearch();
       }
     }, 60000 * 3); // Call the API every 60 seconds
 
-    // Fetch data immediately on component mount
     fetchData().then(result => {
       if (result) {
-        setSubmitT(result.submit);
-        setSubmitTime(result.submitTime);
-        setReturnT(result.return);
-        setReturnTime(result.returnTime);
+        setDuLieuHienTai(result)
         onClickSearch();
       }
     });
@@ -83,37 +82,71 @@ export default function Home() {
     return () => clearInterval(intervalId);
   }, []);
 
+  const isValidCCCD = (input: string) => {
+    if (input.length == 9 || input.length == 12) {
+      return true
+    }
+    alert("Chưa nhập CCCD / Nhập sai CCCD. Xin vui lòng nhập lại.")
+    return false
+  }
+
+
   const onClickNopHS = () => {
+    if (!isValidCCCD(inputValueCCCD))
+      return
+
     let key = getKey(1);
     const savedName = localStorage.getItem(key);
     if (savedName) {
       alert("STT của bạn là: " + savedName);
     } else {
-      fetchRegister().then(res => {
+      let data = {
+        cccd: inputValueCCCD,
+        datekey: key,
+        start: '1'
+      }
+      fetchRegister(data).then(res => {
         if (res.isSuccess) {
           alert(res.message)
           localStorage.setItem(key, res.maphieu);
           updateHS()
+          localStorage.setItem(key_cccd, inputValueCCCD)
         } else {
           alert(res.message)
+          if (!savedName) {
+            localStorage.setItem(key, res.maphieu);
+            updateHS()
+          }
         }
       })
     }
   }
 
   const onClickTraKQ = () => {
+    if (!isValidCCCD(inputValueCCCD))
+      return
+
     let key = getKey(2);
     const savedName = localStorage.getItem(key);
     if (savedName) {
       alert("STT của bạn là: " + savedName);
     } else {
-      fetchRegister2().then(res => {
+      let data = {
+        cccd: inputValueCCCD,
+        datekey: key,
+        start: '2'
+      }
+      fetchRegister(data).then(res => {
         if (res.isSuccess) {
           alert(res.message)
           localStorage.setItem(key, res.maphieu);
           updateHS()
         } else {
           alert(res.message)
+          if (!savedName && res.maphieu) {
+            localStorage.setItem(key, res.maphieu);
+            updateHS()
+          }
         }
       })
     }
@@ -124,6 +157,10 @@ export default function Home() {
     let key2 = getKey(2);
     const savedName1 = localStorage.getItem(key1);
     const savedName2 = localStorage.getItem(key2);
+    const cccd = localStorage.getItem(key_cccd);
+    if (cccd) {
+      setInputValueCCCD(cccd)
+    }
     setVisiNum(false)
     if (savedName1) {
       setNum1(savedName1)
@@ -145,9 +182,9 @@ export default function Home() {
   }
 
   const search1 = (input: string) => {
-    let num = parseInt(input) - parseInt(submitT)
+    let num = parseInt(input) - parseInt(sttNHS)
     if (num >= 0) {
-      let now = submitTime
+      let now = thoiGianNHS
       let newTime = now + (num * 15 * 60000)
       let value = handleConvert(newTime)
       if (value == 'error') return;
@@ -160,8 +197,8 @@ export default function Home() {
   }
 
   const search2 = (input: string) => {
-    let now = submitTime
-    let num = parseInt(input) - parseInt(returnT)
+    let now = thoiGianNHS
+    let num = parseInt(input) - parseInt(sttTKQ)
     if (num >= 0) {
       let newTime = now + (num * 15 * 60000)
       let value = handleConvert(newTime)
@@ -178,7 +215,7 @@ export default function Home() {
     if (inputValue == null || inputValue == '') {
       return
     }
-    let now = submitTime
+    let now = thoiGianNHS
     let res = isCurrentTimeInWorkTime()
     if (!res) {
       alert("Hệ thống không trong giờ làm việc vui lòng thử lại sau\n- Thời gian làm việc từ thứ 2 - thứ 6.\n(sáng: 7:30-12:00, chiều: 13:00-16:30)")
@@ -186,32 +223,10 @@ export default function Home() {
     }
 
     if (inputValue.startsWith("1")) {
-      // let num = parseInt(inputValue) - parseInt(submitT)
-      // if (num >= 0) {
-      //   let newTime = now + (num * 15 * 60000)
-      //   let value = handleConvert(newTime)
-      //   if (value == 'error') return;
-      //   let value2 = handleConvertDate(newTime)
-      //   setCurrentHourTime(value)
-      //   setCurrentHourDate(value2)
-      // } else {
-      //   alert("Vui lòng nhập số lớn hơn số Nợp Hồ Sơ")
-      // }
       search1(inputValue)
     }
 
     if (inputValue.startsWith("2")) {
-      // let num = parseInt(inputValue) - parseInt(returnT)
-      // if (num >= 0) {
-      //   let newTime = now + (num * 15 * 60000)
-      //   let value = handleConvert(newTime)
-      //   if (value == 'error') return;
-      //   let value2 = handleConvertDate(newTime)
-      //   setCurrentHourTime(value)
-      //   setCurrentHourDate(value2)
-      // } else {
-      //   alert("Vui lòng nhập số lớn hơn số Trả Kết Quả")
-      // }
       search2(inputValue)
     }
   };
@@ -235,9 +250,11 @@ export default function Home() {
 
     var hour = now.getUTCHours();
     var min = now.getUTCMinutes()
-    debugger
+
     if (hour > 16 || (hour == 16 && min > 30)) {
       alert("Số bạn nhập quá lớn vui lòng thử lại!")
+      setCurrentHourDate("")
+      setCurrentHourTime("")
       return 'error'
     }
     if (hour < 7 || (hour == 7 && min < 30)) {
@@ -278,8 +295,12 @@ export default function Home() {
             <div className="flex">
               <img className="h-12 w-auto mr-4" src="/logo_white.svg" alt="" />
               <div>
-                <p className="font-bold text-white">GIAO DỊCH ĐIỆN TỬ</p>
-                <p className="font-bold text-xl text-white drop-shadow">BẢO HIỂM XÃ HỘI QUẬN 7</p>
+                <p className="font-bold text-white">
+                  GIAO DỊCH ĐIỆN TỬ
+                </p>
+                <p className="font-bold text-xl text-white drop-shadow">
+                  BẢO HIỂM XÃ HỘI QUẬN 7
+                </p>
               </div>
             </div>
           </div>
@@ -296,23 +317,23 @@ export default function Home() {
           <div className="grid grid-cols-2  divide-x text-white bg-gray-500 rounded-t">
             <div className="p-3 text-center">
               <span>Nợp hồ sơ: </span>
-              <span className="font-bold ">{submitT}</span>
+              <span className="font-bold ">{sttNHS}</span>
             </div>
             <div className="p-3 text-center">
               <span>Trả kết quả: </span>
-              <span className="font-bold ">{returnT}</span>
+              <span className="font-bold ">{sttTKQ}</span>
             </div>
-
           </div>
           <div className="p-6">
             <input type="text"
-              id="success" className="bg-gray-50 border-b text-green-900 block w-full py-2.5"
+              id="success"
+              className="bg-gray-50 border-b text-green-900 block w-full py-2.5"
               placeholder="Nhập STT của bạn"
               value={inputValue}
               onChange={handleInputChange} />
-            <button type="submit" className="w-full mt-2 text-white bg-sky-700 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-4 py-3"
+            <button type="submit"
+              className="w-full mt-2 text-white bg-sky-700 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-4 py-3"
               onClick={onClickSearch}>Tra cứu</button>
-
           </div>
           <div className="flex divide-x border-t border-gray-150">
             <div className="m-auto p-6">
@@ -327,15 +348,33 @@ export default function Home() {
       <div className="bg-white w-full items-center justify-between mt-4 px-4">
         <div className="mx-auto max-w-md rounded ">
           <p className="text-gray-500 font-bold">Lấy Số Quầy: </p>
+          <input type="text"
+            id="success"
+            className="border text-green-900 block w-full py-2.5 rounded px-2 my-2"
+            placeholder="Nhập CCCD"
+            value={inputValueCCCD}
+            onChange={handleInputChangeCCCD} />
           <div className="flex">
-            <button type="submit" className="w-full mt-2 mr-1 text-white bg-sky-700 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-4 py-3"
-              onClick={onClickNopHS}>Nợp Hồ Sơ</button>
-            <button type="submit" className="w-full mt-2 ml-1 text-white bg-sky-700 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-4 py-3"
-              onClick={onClickTraKQ}>Trả Kết Quả</button>
+            <button type="submit"
+              className="w-full mt-2 mr-1 text-white bg-sky-700 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-4 py-3"
+              onClick={onClickNopHS}>
+              Nợp Hồ Sơ
+            </button>
+            <button type="submit"
+              className="w-full mt-2 ml-1 text-white bg-sky-700 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-4 py-3"
+              onClick={onClickTraKQ}>
+              Trả Kết Quả
+            </button>
           </div>
           <div className={visiNum ? "mt-2" : "hidden"}>
-            <button onClick={onClickNum1} className={num1 ? "mt-2 mr-2 text-white bg-sky-700 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-2 py-1" : "hidden"}>{num1}</button>
-            <button onClick={onClickNum2} className={num2 ? "mt-2 text-white bg-sky-700 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-2 py-1" : "hidden"}>{num2}</button>
+            <button onClick={onClickNum1}
+              className={num1 ? "mt-2 mr-2 text-white bg-sky-700 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-2 py-1" : "hidden"}>
+              {num1}
+            </button>
+            <button onClick={onClickNum2}
+              className={num2 ? "mt-2 text-white bg-sky-700 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-2 py-1" : "hidden"}>
+              {num2}
+            </button>
           </div>
         </div>
       </div>
