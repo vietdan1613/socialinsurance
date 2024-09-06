@@ -192,7 +192,7 @@ export default function Home() {
       setCurrentHourTime(value)
       setCurrentHourDate(value2)
     } else {
-      alert("Vui lòng nhập số lớn hơn số Nợp Hồ Sơ")
+      alert("Vui lòng nhập số lớn hơn số nộp hồ sơ")
     }
   }
 
@@ -244,6 +244,7 @@ export default function Home() {
     return now >= startWorkTime && now <= endWorkTime;
   }
 
+  const MESSAGE_OUT_OF_WORKING_DATE = "Số thứ tự quá thời gian làm việc, Khách hàng vui lòng lấy số thứ tự vào ngày mai, trân trọng !"
   const handleConvert = (intValue: number): string => {
     var now = new Date(intValue);
     // Output the date in UTC (optional step)
@@ -252,13 +253,13 @@ export default function Home() {
     var min = now.getUTCMinutes()
 
     if (hour > 16 || (hour == 16 && min > 30)) {
-      alert("Số bạn nhập quá lớn vui lòng thử lại!")
+      alert(MESSAGE_OUT_OF_WORKING_DATE)
       setCurrentHourDate("")
       setCurrentHourTime("")
       return 'error'
     }
     if (hour < 7 || (hour == 7 && min < 30)) {
-      alert("Số bạn nhập quá lớn vui lòng thử lại!")
+      alert(MESSAGE_OUT_OF_WORKING_DATE)
       return 'error'
     }
     const minutesStr = String(min).padStart(2, '0');
@@ -314,9 +315,12 @@ export default function Home() {
 
       <div className="bg-white w-full items-center justify-between mt-4 px-4">
         <div className="shadow-md mx-auto bg-gray-50 max-w-md rounded">
-          <div className="grid grid-cols-2  divide-x text-white bg-gray-500 rounded-t">
+          <div className="grid grid-cols-1 p-3 divide-x text-white bg-gray-600 rounded-t text-center ">
+            <p className="text-center">Số Thứ Tự Hồ Sơ Đang Xử Lý</p>
+          </div>
+          <div className="grid grid-cols-2 divide-x text-white bg-gray-500">
             <div className="p-3 text-center">
-              <span>Nợp hồ sơ: </span>
+              <span>Nộp hồ sơ: </span>
               <span className="font-bold ">{sttNHS}</span>
             </div>
             <div className="p-3 text-center">
@@ -358,12 +362,12 @@ export default function Home() {
             <button type="submit"
               className="w-full mt-2 mr-1 text-white bg-sky-700 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-4 py-3"
               onClick={onClickNopHS}>
-              Nợp Hồ Sơ
+              Nộp hồ sơ
             </button>
             <button type="submit"
               className="w-full mt-2 ml-1 text-white bg-sky-700 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-4 py-3"
               onClick={onClickTraKQ}>
-              Trả Kết Quả
+              Trả kết quả
             </button>
           </div>
           <div className={visiNum ? "mt-2" : "hidden"}>

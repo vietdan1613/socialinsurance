@@ -1,7 +1,7 @@
 const { executeQuery } = require('../services/db');
 
 exports.getTest = async (req, res) => {
-    res.json({ message: `update 22/8` });
+    res.json({ message: `update 26/8` });
 }
 
 exports.getSample = async (req, res) => {
