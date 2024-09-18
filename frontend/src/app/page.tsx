@@ -351,7 +351,10 @@ export default function Home() {
 
       <div className="bg-white w-full items-center justify-between mt-4 px-4">
         <div className="mx-auto max-w-md rounded ">
+
           <p className="text-gray-500 font-bold">Lấy Số Quầy: </p>
+        <p className="text-sm text-orange-600">(Hệ thống lấy số không áp dụng đối với hồ sơ BHXH 1 lần)</p>
+
           <input type="text"
             id="success"
             className="border text-green-900 block w-full py-2.5 rounded px-2 my-2"
