@@ -4,8 +4,9 @@ const fs = require('fs');
 const port = process.env.PORT || 8081;
 
 const options = {
-  cert: fs.readFileSync('D:\\socialinsurance\\backend\\cert.pem'),
-  key: fs.readFileSync('D:\\socialinsurance\\backend\\cert.key'),
+  cert: fs.readFileSync('D:\\socialinsurance\\backend\\baohiemxahoiq7_zapto_org.pem'),
+  key: fs.readFileSync('D:\\socialinsurance\\backend\\private-key.pem'),
+  ca: fs.readFileSync('D:\\socialinsurance\\backend\\DigiCertCA.crt'),
 };
 
 https.createServer(options, app).listen(port, () => {

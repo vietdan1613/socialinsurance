@@ -46,7 +46,7 @@ exports.postRegister = async (req, res) => {
         // update YEUCAU, XULYYC, 
         query = `INSERT INTO YEUCAU(MAPHIEU,MADV,GIOCAP,MATT) VALUES (${maphieu}, ${parseInt(start)}, '${currentDateTime}', 'CHOXL')`;
         await executeQuery(query);
-        query = `INSERT INTO XULYYC(STT, MAPHIEU, MANVU, MANVUT, NB,GLAYPHIEU,GDENQUAY,MATT) VALUES (${num}, ${maphieu}, ${1},${1},${0},'${currentDateTime}','${currentDateTime}','CHOXL')`;
+        query = `INSERT INTO XULYYC(STT, MAPHIEU, MANVU, MANVUT, NB,GLAYPHIEU,GDENQUAY,MATT) VALUES (${num}, ${maphieu}, ${start},${start},${0},'${currentDateTime}','${currentDateTime}','CHOXL')`;
         await executeQuery(query);
         query = `insert into DATLICHHEN(CCCD, NGAYLAYPHIEU, MANGAYLAYPHIEU, MAPHIEU) values('${cccd}', '${currentDateTime}', '${datekey}', ${maphieu})`
         await executeQuery(query);
