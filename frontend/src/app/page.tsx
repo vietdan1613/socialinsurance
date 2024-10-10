@@ -278,7 +278,6 @@ export default function Home() {
 
   function isCurrentTimeInWorkTime(): boolean {
     const now = new Date();
-
     // Define work start and end times (example: 8:00 AM to 5:00 PM)
     const startWorkTime = new Date();
     startWorkTime.setHours(7, 30, 0); // 8:00 AM
