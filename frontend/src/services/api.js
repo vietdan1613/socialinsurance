@@ -12,6 +12,16 @@ export const getSample = async () => {
   }
 };
 
+export const getAllRegister = async () => {
+  try {
+    const response = await axios.get(`${API_URL}/getregister`);
+    return response.data;
+  } catch (error) {
+    console.error('Error getSample', error);
+    throw error;
+  }
+};
+
 export const register1 = async (data) => {
   try {
     const response = await axios.post(`${API_URL}/register`, data);

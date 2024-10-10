@@ -1,8 +1,8 @@
 'use client'
 
 import Image from "next/image";
-import React, { useEffect, useState } from 'react';
-import { getSample, register1, register2 } from '../services/api';
+import React, { useEffect, useState, useRef } from 'react';
+import { getSample, register1, register2, getAllRegister } from '../services/api';
 
 interface FormState {
   sttNHS: string;
@@ -11,6 +11,13 @@ interface FormState {
   thoigianTKQ: number;
 }
 
+interface DataRow {
+  MAPHIEU: string;
+  CCCD: string;
+  NGAYLAYPHIEU: number;
+  GGIAODICH: number;
+  GKETTHUC: number;
+}
 
 export default function Home() {
   const [duLieuHienTai, setDuLieuHienTai] = useState<FormState>({ sttNHS: '', thoiGianNHS: 0, sttTKQ: '', thoigianTKQ: 0 });
@@ -23,6 +30,35 @@ export default function Home() {
   const [inputValue, setInputValue] = useState('');
   const [inputValueCCCD, setInputValueCCCD] = useState('');
   const key_cccd = "your_cccd"
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [dataRes, setDataRes] = useState<DataRow[]>();
+  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
+  const intervalRef = useRef<NodeJS.Timeout | null>(null); // Use ref to store the interval ID
+
+  const loadAllDataRes = async () => {
+    const data = await fetchAllDataRegister();
+    if (data) {
+      const sortedData = [...data].sort((a, b) => {
+        return sortOrder === 'asc' ? a.MAPHIEU - b.MAPHIEU : b.MAPHIEU - a.MAPHIEU;
+      });
+      setDataRes(sortedData)
+      // setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+    }
+  }
+
+
+  const openModal = async () => {
+    await loadAllDataRes();
+    intervalRef.current = setInterval(loadAllDataRes, 10000);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+    setIsModalOpen(false);
+  };
 
   const handleInputChange = (event: any) => {
     const value = event.target.value;
@@ -61,6 +97,15 @@ export default function Home() {
     }
   };
 
+  const fetchAllDataRegister = async () => {
+    try {
+      const data = await getAllRegister();
+      return data.result
+    } catch (error) {
+      console.error('Error fetching fetchData', error);
+      return null
+    }
+  };
 
   useEffect(() => {
     updateHS()
@@ -279,6 +324,23 @@ export default function Home() {
     return dayOfWeek + ", " + day + " Tháng " + month;
   };
 
+  const handleConvertDate2 = (intValue: number) => {
+    var now = new Date(intValue);
+    const year = now.getFullYear();       // 4-digit year
+    const month = String(now.getUTCMonth() + 1).padStart(2, '0'); // Months are 0-indexed, so we add 1
+    const day = String(now.getUTCDate()).padStart(2, '0');
+
+    var hour = now.getUTCHours();
+    var min = now.getUTCMinutes()
+    const minutesStr = String(min).padStart(2, '0');
+    if (now.getUTCHours() == 12 && min > 0) {
+      hour += 1
+    }
+    const hours = String(hour).padStart(2, '0');
+
+    return hours + ":" + minutesStr + " - " + day + " Tháng " + month + ", " + year;
+  };
+
   const getKey = (mode: number) => {
     const now = new Date();
 
@@ -308,8 +370,55 @@ export default function Home() {
         </nav>
       </header>
       <div className="z-10 w-full items-center bg-gray-100">
-        <div className="max-w-5xl mx-auto items-center">
+        <div className="flex max-w-5xl mx-auto items-center">
           <button className="px-2 text-gray-400 text-xs py-1"> Tra cứu </button>
+          <button className="px-2 text-blue-400 text-xs py-1 underline"
+            onClick={openModal}> Danh sách </button>
+          {/* Modal */}
+          {isModalOpen && (
+            <div className="fixed inset-0 flex items-center justify-center z-50">
+              <div className="absolute inset-0 bg-black opacity-50" onClick={closeModal}></div>
+              <div className="bg-white rounded-lg overflow-hidden shadow-lg z-10 max-w-2/3">
+                <div className="p-4">
+                  <h2 className="text-lg font-bold">Danh Sách Đặt Lịch Hẹn</h2>
+
+                  {/* Scrollable table inside the modal */}
+                  <div className="mt-4 overflow-auto"
+                    style={{ maxHeight: '80vh' }}>
+                    <table className="min-w-full">
+                      <thead className="bg-gray-700 sticky top-0 text-white">
+                        <tr>
+                          <th className="px-4 py-2 font-normal">STT</th>
+                          <th className="px-4 py-2 font-normal">CCCD</th>
+                          <th className="px-4 py-2 font-normal">Giờ Giao Dịch</th>
+                          <th className="px-4 py-2 font-normal">Giờ Kết Thúc</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {/* Generate rows with interleaved colors */}
+                        {dataRes && dataRes.length > 0 && dataRes.map((item, index) => (
+                          <tr key={index} className={index % 2 === 0 ? "bg-gray-200" : "bg-white"}>
+                            <td className="px-4 py-2">{item && item!.MAPHIEU}</td>
+                            <td className="px-4 py-2 text-center">{item && item!.CCCD ? item!.CCCD : '-'}</td>
+                            <td className="px-4 py-2 text-center">{item && item!.GGIAODICH ? handleConvertDate2(item!.GGIAODICH * 1000) : '-'}</td>
+                            <td className="px-4 py-2 text-center">{item && item!.GKETTHUC ? handleConvertDate2(item!.GKETTHUC * 1000) : '-'}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <div className="mt-4 flex justify-end">
+                    <button
+                      onClick={closeModal}
+                      className="px-4 py-2 text-white bg-red-600 rounded hover:bg-red-700 focus:outline-none"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
@@ -353,7 +462,7 @@ export default function Home() {
         <div className="mx-auto max-w-md rounded ">
 
           <p className="text-gray-500 font-bold">Lấy Số Quầy: </p>
-        <p className="text-sm text-orange-600">(Hệ thống lấy số không áp dụng đối với hồ sơ BHXH 1 lần)</p>
+          <p className="text-sm text-orange-600">(Hệ thống lấy số không áp dụng đối với hồ sơ BHXH 1 lần)</p>
 
           <input type="text"
             id="success"
