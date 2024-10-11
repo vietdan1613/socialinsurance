@@ -4,6 +4,16 @@ exports.getTest = async (req, res) => {
     res.json({ message: `update 26/8` });
 }
 
+exports.getListRegister = async (req, res) => {
+    try {
+        const query = `SELECT XULYYC.MAPHIEU, viet.CCCD, DATEDIFF(SECOND, '1970-01-01', viet.NGAYLAYPHIEU) AS NGAYLAYPHIEU, DATEDIFF(SECOND, '1970-01-01', XULYYC.GGIAODICH) AS GGIAODICH, DATEDIFF(SECOND, '1970-01-01', XULYYC.GKETTHUC) AS GKETTHUC FROM XULYYC FULL JOIN (SELECT *FROM DATLICHHEN WHERE CONVERT(DATE, DATLICHHEN.NGAYLAYPHIEU) = CONVERT(DATE, GETDATE())) AS viet ON viet.MAPHIEU = XULYYC.MAPHIEU`;
+        const result = await executeQuery(query);
+        res.json({ result: result.recordsets[0] });
+    } catch (err) {
+        res.json({ message: `${err}` });
+    }
+}
+
 exports.getSample = async (req, res) => {
     try {
         const query = `SELECT MAPHIEU, DATEDIFF(SECOND, '1970-01-01', GGIAODICH) AS UnixTimestamp FROM XULYYC WHERE GGIAODICH IS NOT NULL`;
@@ -46,13 +56,14 @@ exports.postRegister = async (req, res) => {
         // update YEUCAU, XULYYC, 
         query = `INSERT INTO YEUCAU(MAPHIEU,MADV,GIOCAP,MATT) VALUES (${maphieu}, ${parseInt(start)}, '${currentDateTime}', 'CHOXL')`;
         await executeQuery(query);
-        query = `INSERT INTO XULYYC(STT, MAPHIEU, MANVU, MANVUT, NB,GLAYPHIEU,GDENQUAY,MATT) VALUES (${num}, ${maphieu}, ${start},${start},${0},'${currentDateTime}','${currentDateTime}','CHOXL')`;
+        query = `INSERT INTO XULYYC(STT, MAPHIEU, MANVU, MANVUT, NB,GLAYPHIEU,GDENQUAY,MATT) VALUES (${num}, ${maphieu}, ${parseInt(start)},${parseInt(start)},${0},'${currentDateTime}','${currentDateTime}','CHOXL')`;
         await executeQuery(query);
         query = `insert into DATLICHHEN(CCCD, NGAYLAYPHIEU, MANGAYLAYPHIEU, MAPHIEU) values('${cccd}', '${currentDateTime}', '${datekey}', ${maphieu})`
         await executeQuery(query);
         res.json({ isSuccess: true, message: "Lấy số thành công, mã phiếu của bạn là: " + maphieu, maphieu: maphieu });
     } catch (err) {
-        res.json({ isSuccess: false, message: "Lấy số thất bại" });
+        let mess = "Lấy số thất bại\n" + err.message
+        res.json({ isSuccess: false, message: mess });
     }
 }
 

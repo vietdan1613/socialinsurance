@@ -8,8 +8,11 @@ const config = {
   server: 'DESKTOP-I0IKPN8\\SQLEXPRESS',
   database: 'QMS',
   options: {
-    encrypt: true, // Use encryption (required for Azure)
+    encrypt: false, // Use encryption (required for Azure)
     trustServerCertificate: true, // Change to true for local dev/test
+    cryptoCredentialsDetails: {
+      minVersion: 'TLSv1'
+    }
   },
 };
 
