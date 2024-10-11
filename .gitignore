@@ -38,3 +38,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 backend/src/daemon
+frontend/.vs
