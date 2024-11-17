@@ -71,7 +71,9 @@ export default function Home() {
 
   const handleInputChangeCCCD = (event: any) => {
     const value = event.target.value;
-
+    if (value.length > 12) {
+      return
+    }
     // Validate if the input is a number (using regex)
     if (/^\d*$/.test(value)) {
       setInputValueCCCD(value); // Update state if it's a number
