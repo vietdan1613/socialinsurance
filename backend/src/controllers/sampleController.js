@@ -20,7 +20,14 @@ exports.getSample = async (req, res) => {
         const result = await executeQuery(query);
         let sub = maxNumberStartingWith(result.recordsets[0], '1')
         let ret = maxNumberStartingWith(result.recordsets[0], '2')
-        res.json({ sttNHS: sub.MAPHIEU, thoiGianNHS: sub.UnixTimestamp * 1000, sttTKQ: ret.MAPHIEU, thoigianTKQ: ret.UnixTimestamp * 1000 });
+       
+        res.json({
+            sttNHS: sub ? sub.MAPHIEU : null,
+            thoiGianNHS: sub ? sub.UnixTimestamp * 1000 : null,
+            sttTKQ: ret ? ret.MAPHIEU : null,
+            thoigianTKQ: ret ? ret.UnixTimestamp * 1000 : null
+        });
+
     } catch (err) {
         res.json({ message: `${err}` });
     }
