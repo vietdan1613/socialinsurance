@@ -273,7 +273,7 @@ export default function Home() {
       search1(inputValue)
     }
 
-    if (inputValue.startsWith("2")) {
+    if (inputValue.startsWith("3")) {
       search2(inputValue)
     }
   };

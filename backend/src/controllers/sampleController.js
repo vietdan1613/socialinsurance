@@ -19,7 +19,7 @@ exports.getSample = async (req, res) => {
         const query = `SELECT MAPHIEU, DATEDIFF(SECOND, '1970-01-01', GGIAODICH) AS UnixTimestamp FROM XULYYC WHERE GGIAODICH IS NOT NULL`;
         const result = await executeQuery(query);
         let sub = maxNumberStartingWith(result.recordsets[0], '1')
-        let ret = maxNumberStartingWith(result.recordsets[0], '2')
+        let ret = maxNumberStartingWith(result.recordsets[0], '3')
        
         res.json({
             sttNHS: sub ? sub.MAPHIEU : null,
