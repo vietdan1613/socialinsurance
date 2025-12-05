@@ -181,7 +181,7 @@ export default function Home() {
       let data = {
         cccd: inputValueCCCD,
         datekey: key,
-        start: '2'
+        start: '3'
       }
       fetchRegister(data).then(res => {
         if (res.isSuccess) {
