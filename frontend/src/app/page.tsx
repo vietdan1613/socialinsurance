@@ -363,7 +363,7 @@ export default function Home() {
                   GIAO DỊCH ĐIỆN TỬ
                 </p>
                 <p className="font-bold text-xl text-white drop-shadow">
-                  BẢO HIỂM XÃ HỘI QUẬN 7
+                  BẢO HIỂM XÃ HỘI CƠ SỞ XÓM CHIẾU 
                 </p>
               </div>
             </div>
