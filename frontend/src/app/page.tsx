@@ -34,6 +34,7 @@ export default function Home() {
   const [dataRes, setDataRes] = useState<DataRow[]>();
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
   const intervalRef = useRef<NodeJS.Timeout | null>(null); // Use ref to store the interval ID
+  const [isChecked, setIsChecked] = useState(false);
 
   const loadAllDataRes = async () => {
     const data = await fetchAllDataRegister();
@@ -363,7 +364,7 @@ export default function Home() {
                   GIAO DỊCH ĐIỆN TỬ
                 </p>
                 <p className="font-bold text-xl text-white drop-shadow">
-                  BẢO HIỂM XÃ HỘI CƠ SỞ XÓM CHIẾU 
+                  BẢO HIỂM XÃ HỘI CƠ SỞ XÓM CHIẾU
                 </p>
               </div>
             </div>
@@ -426,7 +427,7 @@ export default function Home() {
       <div className="bg-white w-full items-center justify-between mt-4 px-4">
         <div className="shadow-md mx-auto bg-gray-50 max-w-md rounded">
           <div className="grid grid-cols-1 p-3 divide-x text-white bg-gray-600 rounded-t text-center ">
-            <p className="text-center">Số Thứ Tự Hồ Sơ Đang Xử Lý</p>
+            <p className="text-center font-medium">Số Thứ Tự Hồ Sơ Đang Xử Lý</p>
           </div>
           <div className="grid grid-cols-2 divide-x text-white bg-gray-500">
             <div className="p-3 text-center">
@@ -439,7 +440,7 @@ export default function Home() {
             </div>
           </div>
           <div className="p-6">
-            <input type="text"
+            {/* <input type="text"
               id="success"
               className="bg-gray-50 border-b text-green-900 block w-full py-2.5"
               placeholder="Nhập STT của bạn"
@@ -447,9 +448,61 @@ export default function Home() {
               onChange={handleInputChange} />
             <button type="submit"
               className="w-full mt-2 text-white bg-sky-700 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-4 py-3"
-              onClick={onClickSearch}>Tra cứu</button>
+              onClick={onClickSearch}>Tra cứu</button> */}
+            <div className="mx-auto">
+              <input type="text"
+                id="success"
+                className="bg-gray-50 border rounded px-2 text-green-900 block w-full py-2.5"
+                placeholder="Nhập CCCD"
+                value={inputValueCCCD}
+                onChange={handleInputChangeCCCD} />
+
+              <div className="flex items-start gap-1 my-2 mt-4">
+                <input
+                  type="checkbox"
+                  id="consent"
+                  checked={isChecked}
+                  onChange={(e) => {
+                    setIsChecked(e.target.checked);
+                  }}
+                  className="h-4 w-4 rounded border-gray-200 text-blue-600 focus:ring-blue-500"
+                />
+
+                <label htmlFor="consent" className="text-xs text-gray-400">
+                  Tôi xác nhận thông tin 06 số cuối CCCD đã cung cấp là đúng và đồng ý cho phép hệ thống xử lý thông tin này nhằm mục đích quản lý thứ tự giao dịch theo quy định của Nghị định số 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân.
+                </label>
+              </div>
+              <div className="flex">
+                <button type="submit"
+                  disabled={!isChecked}
+                  className={"w-full mt-2 mr-1 text-white bg-sky-700 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-4 py-3" + (isChecked ? "" : " opacity-50 cursor-not-allowed bg-gray-400 hover:bg-gray-400")}
+                  onClick={onClickNopHS}>
+                  Nộp hồ sơ
+                </button>
+                <button type="submit"
+                  disabled={!isChecked}
+                  className={"w-full mt-2 mr-1 text-white bg-sky-700 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-4 py-3" + (isChecked ? "" : " opacity-50 cursor-not-allowed bg-gray-400 hover:bg-gray-400")}
+                  onClick={onClickTraKQ}>
+                  Trả kết quả
+                </button>
+              </div>
+
+              {/* <p className="text-gray-500 font-bold">Lấy Số Quầy: </p> */}
+              <p className="text-xs italic text-orange-600 mt-2">(Hệ thống lấy số không áp dụng đối với hồ sơ BHXH 1 lần)</p>
+
+              <div className={visiNum ? "mt-2" : "hidden"}>
+                <button onClick={onClickNum1}
+                  className={num1 ? "mt-2 mr-2 text-white bg-sky-700 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-2 py-1" : "hidden"}>
+                  {num1}
+                </button>
+                <button onClick={onClickNum2}
+                  className={num2 ? "mt-2 text-white bg-sky-700 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-2 py-1" : "hidden"}>
+                  {num2}
+                </button>
+              </div>
+            </div>
           </div>
-          <div className="flex divide-x border-t border-gray-150">
+          <div className="flex border-t pt-4 border-gray-200">
             <div className="m-auto p-6">
               <p className="text-gray-500 font-bold">Thời gian ước tính</p>
               <p className="text-8xl font-bold text-sky-700">{currentHour}</p>
@@ -459,7 +512,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-white w-full items-center justify-between mt-4 px-4">
+      {/* <div className="bg-white w-full items-center justify-between mt-4 px-4">
         <div className="mx-auto max-w-md rounded ">
 
           <p className="text-gray-500 font-bold">Lấy Số Quầy: </p>
@@ -494,7 +547,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="bg-white w-full items-center justify-between mt-4 px-4">
         <div className="flex mx-auto max-w-md rounded text-xs italic text-gray-400">
           <div className="mr-1">* Lưu ý: </div>
