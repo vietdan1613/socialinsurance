@@ -72,7 +72,7 @@ export default function Home() {
 
   const handleInputChangeCCCD = (event: any) => {
     const value = event.target.value;
-    if (value.length > 12) {
+    if (value.length > 6) {
       return
     }
     // Validate if the input is a number (using regex)
@@ -131,13 +131,13 @@ export default function Home() {
   }, []);
 
   const isValidCCCD = (input: string) => {
-    if (input.length == 9 || input.length == 12) {
-      return true
+    if (/^\d{6}$/.test(input)) {
+      return true;
     }
-    alert("Chưa nhập CCCD / Nhập sai CCCD. Xin vui lòng nhập lại.")
-    return false
-  }
 
+    alert("Vui lòng nhập đúng 6 số cuối CCCD.");
+    return false;
+  };
 
   const onClickNopHS = () => {
     if (!isValidCCCD(inputValueCCCD))
@@ -207,7 +207,10 @@ export default function Home() {
     const savedName2 = localStorage.getItem(key2);
     const cccd = localStorage.getItem(key_cccd);
     if (cccd) {
-      setInputValueCCCD(cccd)
+      const value =
+        cccd.length > 6 ? cccd.slice(0, -6) : cccd; // cut last 6 chars if > 6
+
+      setInputValueCCCD(value);
     }
     setVisiNum(false)
     if (savedName1) {
@@ -449,13 +452,28 @@ export default function Home() {
             <button type="submit"
               className="w-full mt-2 text-white bg-sky-700 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-4 py-3"
               onClick={onClickSearch}>Tra cứu</button> */}
+
             <div className="mx-auto">
-              <input type="text"
-                id="success"
-                className="bg-gray-50 border rounded px-2 text-green-900 block w-full py-2.5"
-                placeholder="Nhập CCCD"
-                value={inputValueCCCD}
-                onChange={handleInputChangeCCCD} />
+              <div>
+                <label className="block mb-1 text-sm font-medium text-gray-700">
+                  Nhập 6 số cuối CCCD:
+                </label>
+
+                <input
+                  type="text"
+                  id="cccd-last-6"
+                  className="bg-gray-50 border rounded px-2 text-green-900 block w-full py-2.5"
+                  placeholder="Vui lòng nhập 6 số cuối CCCD"
+                  value={inputValueCCCD}
+                  inputMode="numeric"
+                  maxLength={6}
+                  onChange={(e) => {
+                    handleInputChangeCCCD(e);
+                  }}
+                />
+              </div>
+
+
 
               <div className="flex items-start gap-1 my-2 mt-4">
                 <input
