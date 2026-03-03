@@ -57,7 +57,16 @@ exports.postRegister = async (req, res) => {
         result = await executeQuery(query);
         const records = result.recordsets[0];
         const num = records[records.length - 1].STT + 1;
-        let maphieu = maxNumberStartingWith(result.recordsets[0], start).MAPHIEU + 1
+
+        const maxRecord = maxNumberStartingWith(result.recordsets[0], start);
+        let maphieu;
+
+if (maxRecord) {
+    maphieu = maxRecord.MAPHIEU + 1;
+} else {
+    // Nếu chưa có số nào, tạo số đầu tiên theo quy tắc
+    maphieu = parseInt(start) * 1000 + 1; 
+}
         let currentDateTime = getCurrentDate()
 
         // update YEUCAU, XULYYC, 
