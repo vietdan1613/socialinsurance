@@ -1,8 +1,8 @@
 'use client'
 
-import Image from "next/image";
 import React, { useEffect, useState, useRef } from 'react';
-import { getSample, register1, register2, getAllRegister } from '../services/api';
+import { getSample, register1, getAllRegister } from '../../services/api';
+import { getTenantName } from '../../services/mapper';
 
 interface FormState {
   sttNHS: string;
@@ -19,7 +19,7 @@ interface DataRow {
   GKETTHUC: number;
 }
 
-export default function Home() {
+export default function Home({ params }: { params: { tenant: string } }) {
   const [duLieuHienTai, setDuLieuHienTai] = useState<FormState>({ sttNHS: '', thoiGianNHS: 0, sttTKQ: '', thoigianTKQ: 0 });
   const { sttNHS, thoiGianNHS, sttTKQ, thoigianTKQ } = duLieuHienTai;
   const [currentHour, setCurrentHourTime] = useState<string>('');
@@ -35,6 +35,8 @@ export default function Home() {
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
   const intervalRef = useRef<NodeJS.Timeout | null>(null); // Use ref to store the interval ID
   const [isChecked, setIsChecked] = useState(false);
+
+  const tenant = params.tenant
 
   const loadAllDataRes = async () => {
     const data = await fetchAllDataRegister();
@@ -83,7 +85,7 @@ export default function Home() {
 
   const fetchRegister = async (data: any) => {
     try {
-      return await register1(data)
+      return await register1(data, tenant)
     } catch (error) {
       console.error('Error fetching fetchRegister', error);
       return null
@@ -92,7 +94,7 @@ export default function Home() {
 
   const fetchData = async () => {
     try {
-      const data = await getSample();
+      const data = await getSample(tenant);
       return data
     } catch (error) {
       console.error('Error fetching fetchData', error);
@@ -102,7 +104,7 @@ export default function Home() {
 
   const fetchAllDataRegister = async () => {
     try {
-      const data = await getAllRegister();
+      const data = await getAllRegister(tenant);
       return data.result
     } catch (error) {
       console.error('Error fetching fetchData', error);
@@ -367,7 +369,7 @@ export default function Home() {
                   GIAO DỊCH ĐIỆN TỬ
                 </p>
                 <p className="font-bold text-xl text-white drop-shadow">
-                  BẢO HIỂM XÃ HỘI CƠ SỞ XÓM CHIẾU
+                  BẢO HIỂM XÃ HỘI CƠ SỞ {getTenantName(tenant)}
                 </p>
               </div>
             </div>

@@ -1,10 +1,10 @@
 import axios from 'axios';
+import { getTenant } from './mapper';
+//const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8081/api';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8081/api';
-
-export const getSample = async () => {
+export const getSample = async (tenant) => {
   try {
-    const response = await axios.get(`${API_URL}/sample`);
+    const response = await axios.get(`${getTenant(tenant)}/sample`);
     return response.data;
   } catch (error) {
     console.error('Error getSample', error);
@@ -12,9 +12,9 @@ export const getSample = async () => {
   }
 };
 
-export const getAllRegister = async () => {
+export const getAllRegister = async (tenant) => {
   try {
-    const response = await axios.get(`${API_URL}/getregister`);
+    const response = await axios.get(`${getTenant(tenant)}/getregister`);
     return response.data;
   } catch (error) {
     console.error('Error getSample', error);
@@ -22,22 +22,12 @@ export const getAllRegister = async () => {
   }
 };
 
-export const register1 = async (data) => {
+export const register1 = async (data, tenant) => {
   try {
-    const response = await axios.post(`${API_URL}/register`, data);
+    const response = await axios.post(`${getTenant(tenant)}/register`, data);
     return response.data;
   } catch (error) {
     console.error('Error register1', error);
-    throw error;
-  }
-};
-
-export const register2 = async () => {
-  try {
-    const response = await axios.get(`${API_URL}/register2`);
-    return response.data;
-  } catch (error) {
-    console.error('Error register2', error);
     throw error;
   }
 };
