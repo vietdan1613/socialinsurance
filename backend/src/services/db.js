@@ -3,9 +3,11 @@ const sql = require('mssql');
 
 // Configuration object for your SQL Server connection
 const config = {
-  user: 'sa',
+  user: 'qms_user',
   password: '12345',
-  server: 'WINDOWS-11\\SQLEXPRESS',
+  //server: 'DESKTOP-GLT2QJ4\\SQLEXPRESS',
+  server: 'localhost',
+  port: 1433,
   database: 'QMS',
   options: {
     encrypt: false, // Use encryption (required for Azure)
