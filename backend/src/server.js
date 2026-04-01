@@ -1,4 +1,4 @@
-import { initDatLichHenTable } from './services/initData.js';
+const initDatLichHenTable = require('./services/initData.js');
 
 const app = require('./app.js');
 //const https = require('https');

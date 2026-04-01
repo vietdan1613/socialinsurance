@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: "my-app",
+      name: "bhxh",
       script: "src/server.js",
       instances: 1,
       autorestart: true,
@@ -10,7 +10,7 @@ module.exports = {
     {
       name: "cloudflare-tunnel",
       script: "cmd.exe",
-      args: '/c "cloudflared tunnel run my-app"',
+      args: '/c "cloudflared tunnel run bhxh"',
       autorestart: true
     }
   ]

@@ -1,4 +1,6 @@
-export const initDatLichHenTable = async () => {
+const { executeQuery } = require('./db');
+
+const initDatLichHenTable = async () => {
     try {
         const query = `
         IF NOT EXISTS (
@@ -23,3 +25,5 @@ export const initDatLichHenTable = async () => {
         console.error('❌ Error creating DATLICHHEN:', err);
     }
 };
+
+module.exports = initDatLichHenTable

@@ -1,0 +1,7 @@
+tunnel: c91651e9-b9aa-4236-8533-6c9261b36ce3
+credentials-file: C:\Users\DINH-TRAN\.cloudflared\c91651e9-b9aa-4236-8533-6c9261b36ce3.json
+
+ingress:
+  - hostname: chanhhung.bhxh-online.com
+    service: http://localhost:8082
+  - service: http_status:404
