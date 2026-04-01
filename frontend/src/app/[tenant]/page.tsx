@@ -29,7 +29,6 @@ export default function Home({ params }: { params: { tenant: string } }) {
   const [visiNum, setVisiNum] = useState<boolean>(false);
   const [inputValue, setInputValue] = useState('');
   const [inputValueCCCD, setInputValueCCCD] = useState('');
-  const key_cccd = "your_cccd"
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [dataRes, setDataRes] = useState<DataRow[]>();
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
@@ -37,6 +36,7 @@ export default function Home({ params }: { params: { tenant: string } }) {
   const [isChecked, setIsChecked] = useState(false);
 
   const tenant = params.tenant
+  const key_cccd = `${tenant}_your_cccd`
 
   const loadAllDataRes = async () => {
     const data = await fetchAllDataRegister();
@@ -351,10 +351,11 @@ export default function Home({ params }: { params: { tenant: string } }) {
   const getKey = (mode: number) => {
     const now = new Date();
 
-    const year = now.getFullYear();       // 4-digit year
-    const month = now.getMonth() + 1;     // Month (0-11, add 1 to get 1-12)
-    const day = now.getDate();            // Day of the month (1-31)
-    return day + "_" + month + "_" + year + "_" + mode
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1;
+    const day = now.getDate();
+
+    return `${tenant}_${day}_${month}_${year}_${mode}`;
   }
 
   return (

@@ -20,7 +20,6 @@ exports.getSample = async (req, res) => {
         const result = await executeQuery(query);
         let sub = maxNumberStartingWith(result.recordsets[0], '1')
         let ret = maxNumberStartingWith(result.recordsets[0], '3')
-       
         res.json({
             sttNHS: sub ? sub.MAPHIEU : null,
             thoiGianNHS: sub ? sub.UnixTimestamp * 1000 : null,
@@ -61,12 +60,12 @@ exports.postRegister = async (req, res) => {
         const maxRecord = maxNumberStartingWith(result.recordsets[0], start);
         let maphieu;
 
-if (maxRecord) {
-    maphieu = maxRecord.MAPHIEU + 1;
-} else {
-    // Nếu chưa có số nào, tạo số đầu tiên theo quy tắc
-    maphieu = parseInt(start) * 1000 + 1; 
-}
+        if (maxRecord) {
+            maphieu = maxRecord.MAPHIEU + 1;
+        } else {
+            // Nếu chưa có số nào, tạo số đầu tiên theo quy tắc
+            maphieu = parseInt(start) * 1000 + 1;
+        }
         let currentDateTime = getCurrentDate()
 
         // update YEUCAU, XULYYC, 
