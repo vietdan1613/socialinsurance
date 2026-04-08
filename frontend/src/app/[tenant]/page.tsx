@@ -164,7 +164,7 @@ export default function Home({ params }: { params: { tenant: string } }) {
           localStorage.setItem(key_cccd, inputValueCCCD)
         } else {
           alert(res.message)
-          if (!savedName) {
+          if (!savedName && res.maphieu) {
             localStorage.setItem(key, res.maphieu);
             updateHS()
           }
