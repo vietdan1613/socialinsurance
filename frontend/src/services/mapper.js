@@ -14,6 +14,29 @@ const TENANT_CONFIG_NAME = {
     default: '',
 }
 
+const TENANT_CONFIG_NOPHS= {
+    xomchieu: '1',
+    thuduc: '1',
+    chanhhung: '2',
+    anlac: '2',
+    default: '1',
+}
+
+const TENANT_CONFIG_TRAKQ = {
+    xomchieu: '3',
+    thuduc: '2',
+    chanhhung: '1',
+    anlac: '3',
+    default: '3',
+}
+export function getTenantNopHS(tenant) {
+    return TENANT_CONFIG_NOPHS[tenant] || TENANT_CONFIG_NOPHS.default
+}
+
+export function getTenantTraKQ(tenant) {
+    return TENANT_CONFIG_TRAKQ[tenant] || TENANT_CONFIG_TRAKQ.default
+}
+
 export function getTenantName(tenant) {
     return TENANT_CONFIG_NAME[tenant] || TENANT_CONFIG_NAME.default
 }

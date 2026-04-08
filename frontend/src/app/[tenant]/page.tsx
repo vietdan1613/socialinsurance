@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import { getSample, register1, getAllRegister } from '../../services/api';
-import { getTenantName } from '../../services/mapper';
+import { getTenantName, getTenantNopHS, getTenantTraKQ } from '../../services/mapper';
 
 interface FormState {
   sttNHS: string;
@@ -145,7 +145,8 @@ export default function Home({ params }: { params: { tenant: string } }) {
     if (!isValidCCCD(inputValueCCCD))
       return
 
-    let key = getKey(1);
+    const num = getTenantNopHS(tenant)
+    let key = getKey(num);
     const savedName = localStorage.getItem(key);
     if (savedName) {
       alert("STT của bạn là: " + savedName);
@@ -153,7 +154,7 @@ export default function Home({ params }: { params: { tenant: string } }) {
       let data = {
         cccd: inputValueCCCD,
         datekey: key,
-        start: '1'
+        start: num
       }
       fetchRegister(data).then(res => {
         if (res.isSuccess) {
@@ -176,7 +177,9 @@ export default function Home({ params }: { params: { tenant: string } }) {
     if (!isValidCCCD(inputValueCCCD))
       return
 
-    let key = getKey(2);
+    const num = getTenantTraKQ(tenant)
+
+    let key = getKey(num);
     const savedName = localStorage.getItem(key);
     if (savedName) {
       alert("STT của bạn là: " + savedName);
@@ -184,7 +187,7 @@ export default function Home({ params }: { params: { tenant: string } }) {
       let data = {
         cccd: inputValueCCCD,
         datekey: key,
-        start: '3'
+        start: num
       }
       fetchRegister(data).then(res => {
         if (res.isSuccess) {
@@ -203,8 +206,11 @@ export default function Home({ params }: { params: { tenant: string } }) {
   }
 
   const updateHS = () => {
-    let key1 = getKey(1);
-    let key2 = getKey(2);
+    const num1 = getTenantNopHS(tenant)
+    const num2 = getTenantTraKQ(tenant)
+
+    let key1 = getKey(num1);
+    let key2 = getKey(num2);
     const savedName1 = localStorage.getItem(key1);
     const savedName2 = localStorage.getItem(key2);
     const cccd = localStorage.getItem(key_cccd);
@@ -348,7 +354,7 @@ export default function Home({ params }: { params: { tenant: string } }) {
     return hours + ":" + minutesStr + " - " + day + " Tháng " + month + ", " + year;
   };
 
-  const getKey = (mode: number) => {
+  const getKey = (mode: string) => {
     const now = new Date();
 
     const year = now.getFullYear();
