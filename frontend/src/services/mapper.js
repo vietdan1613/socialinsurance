@@ -3,6 +3,7 @@ const TENANT_CONFIG_URL = {
     thuduc: 'https://thuduc.bhxh-online.com/api',
     chanhhung: 'https://chanhhung.bhxh-online.com/api',
     anlac: 'https://anlac.bhxh-online.com/api',
+    caukieu: 'https://caukieu.bhxh-online.com/api',
     default: 'https://api.example.com',
 }
 
@@ -11,14 +12,16 @@ const TENANT_CONFIG_NAME = {
     thuduc: 'THỦ ĐỨC',
     chanhhung: 'CHÁNH HƯNG',
     anlac: 'AN LẠC',
+    caukieu: 'CẦU KIỆU',
     default: '',
 }
 
-const TENANT_CONFIG_NOPHS= {
+const TENANT_CONFIG_NOPHS = {
     xomchieu: '1',
     thuduc: '1',
     chanhhung: '2',
     anlac: '2',
+    caukieu: '1',
     default: '1',
 }
 
@@ -27,6 +30,7 @@ const TENANT_CONFIG_TRAKQ = {
     thuduc: '2',
     chanhhung: '1',
     anlac: '3',
+    caukieu: '3',
     default: '3',
 }
 export function getTenantNopHS(tenant) {
