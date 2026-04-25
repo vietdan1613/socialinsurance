@@ -33,7 +33,7 @@ const TENANT_CONFIG_TRAKQ = {
     thuduc: '2',
     chanhhung: '1',
     anlac: '3',
-    caukieu: '3',
+    caukieu: '2',
     binhthoi: '3',
     default: '3',
 }
