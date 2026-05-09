@@ -34,7 +34,7 @@ const TENANT_CONFIG_TRAKQ = {
     chanhhung: '1',
     anlac: '3',
     caukieu: '2',
-    binhthoi: '3',
+    binhthoi: '2',
     default: '3',
 }
 export function getTenantNopHS(tenant) {
