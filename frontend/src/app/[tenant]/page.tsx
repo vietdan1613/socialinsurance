@@ -515,7 +515,7 @@ export default function Home({ params }: { params: { tenant: string } }) {
               </div>
 
               {/* <p className="text-gray-500 font-bold">Lấy Số Quầy: </p> */}
-              <p className="text-xs italic text-orange-600 mt-2">(Hệ thống lấy số không áp dụng đối với hồ sơ BHXH 1 lần)</p>
+              {/* <p className="text-xs italic text-orange-600 mt-2">(Hệ thống lấy số không áp dụng đối với hồ sơ BHXH 1 lần)</p> */}
 
               <div className={visiNum ? "mt-2" : "hidden"}>
                 <button onClick={onClickNum1}
