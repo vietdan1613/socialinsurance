@@ -21,7 +21,7 @@ const TENANT_CONFIG_NAME = {
 const TENANT_CONFIG_NOPHS = {
     xomchieu: '1',
     thuduc: '1',
-    chanhhung: '2',
+    chanhhung: '8',
     anlac: '2',
     caukieu: '1',
     binhthoi: '1',
