@@ -13,7 +13,7 @@ const initDatLichHenTable = async () => {
                 ID INT IDENTITY(1,1) PRIMARY KEY,
                 CCCD VARCHAR(20) NOT NULL,
                 NGAYLAYPHIEU DATETIME NOT NULL DEFAULT GETDATE(),
-                MANGAYLAYPHIEU VARCHAR(20) NOT NULL,
+                MANGAYLAYPHIEU VARCHAR(30) NOT NULL,
                 MAPHIEU INT NOT NULL
             );
         END
